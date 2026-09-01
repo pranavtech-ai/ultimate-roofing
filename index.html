@@ -1,34 +1,38 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Roofing — Owens Corning Platinum Preferred Contractor</title>
+    <title>Summit Roofing Co. — Premium Roofing & Exterior Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         'brand': {
-                            'dark': '#0d0d0f',
-                            'charcoal': '#161618',
-                            'orange': '#f25c05',
-                            'orange-dark': '#c84700',
-                            'orange-light': '#ff782e',
-                            'pink': '#ea1d5d',
-                            'pink-dark': '#c21048',
-                            'warm': '#fbfaf8',
+                            'dark': '#1a1a1c',
+                            'charcoal': '#252528',
+                            'accent': '#e8722a',
+                            'accent-dark': '#c95e1e',
+                            'accent-light': '#f08a4d',
+                            'warm': '#f9f6f1',
                             'cream': '#fdfbf7',
-                            'border': '#e7e3dc',
+                            'stone': '#8b8b8e',
+                            'border': '#e8e5e0',
                         }
                     },
                     fontFamily: {
                         'display': ['Outfit', 'sans-serif'],
                         'body': ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '14px',
+                        '2xl': '20px',
+                        '3xl': '28px',
                     }
                 }
             }
@@ -36,273 +40,106 @@
     </script>
     <style>
         :root {
-            --orange: #f25c05;
-            --orange-dark: #c84700;
-            --pink: #ea1d5d;
-            --dark: #0d0d0f;
+            --accent: #e8722a;
+            --accent-dark: #c95e1e;
+            --charcoal: #1a1a1c;
             --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
         body {
             font-family: 'Inter', sans-serif;
             color: #1a1a1c;
             background: #fdfbf7;
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        body.menu-open, body.modal-open { overflow: hidden; }
-
-        /* Top Announcement Bar */
-        .top-bar {
-            background: linear-gradient(90deg, #c84700, #f25c05, #ea1d5d);
-            background-size: 200% 200%;
-            animation: gradientMove 6s ease infinite;
-            color: #fff;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            text-align: center;
-            padding: 9px 14px;
-            position: relative;
-            z-index: 1002;
-        }
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        body.menu-open,
+        body.modal-open {
+            overflow: hidden;
         }
 
         /* Navigation */
         .nav-bar {
             position: fixed;
-            top: 40px;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 16px 0;
+            padding: 18px 0;
             transition: all var(--transition);
         }
         .nav-bar.scrolled {
-            top: 0;
-            background: rgba(13, 13, 15, 0.95);
+            background: rgba(26, 26, 28, 0.94);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 10px 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
         }
         .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            letter-spacing: -0.02em;
             cursor: pointer;
+        }
+        .nav-logo-mark {
+            width: 38px;
+            height: 38px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .nav-logo-mark svg {
+            width: 20px;
+            height: 20px;
         }
         .nav-link {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.78);
             font-size: 14px;
-            font-weight: 600;
-            padding: 8px 16px;
+            font-weight: 500;
+            padding: 10px 16px;
             border-radius: 8px;
             transition: all var(--transition);
+            letter-spacing: 0.01em;
             cursor: pointer;
+            white-space: nowrap;
         }
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: #fff;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.07);
         }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 28px;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            letter-spacing: 0.02em;
-            border-radius: 10px;
-            transition: all var(--transition);
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary {
-            background: var(--orange);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(242, 92, 5, 0.4);
-        }
-        .btn-primary:hover {
-            background: var(--orange-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(242, 92, 5, 0.55);
-        }
-        .btn-outline-light {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-        }
-        .btn-outline-light:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #fff;
-            transform: translateY(-2px);
-        }
-
-        /* Pulse glow animation */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(242, 92, 5, 0.5); }
-            50% { box-shadow: 0 0 0 16px rgba(242, 92, 5, 0); }
-        }
-        .pulse-btn { animation: pulse-glow 2.2s infinite; }
-
-        /* Floating Pink Panther Sticky Tab */
-        .panther-sticky-tab {
-            position: fixed;
-            right: 0;
-            top: 55%;
-            transform: translateY(-50%);
-            z-index: 990;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .panther-sticky-tab:hover {
-            transform: translateY(-50%) translateX(-6px);
-        }
-        .panther-tab-label {
-            background: var(--pink);
-            color: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 11px;
-            letter-spacing: 0.08em;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            padding: 14px 7px;
-            border-radius: 0 10px 10px 0;
-            box-shadow: -4px 0 20px rgba(234, 29, 93, 0.45);
-        }
-        .panther-avatar-box {
-            background: #fff;
-            padding: 6px;
-            border-radius: 12px 0 0 12px;
-            border: 2px solid var(--pink);
-            border-right: none;
-            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-
-        /* Before/After Slider */
-        .ba-slider {
-            position: relative;
-            width: 100%;
-            max-width: 860px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 24px;
-            cursor: ew-resize;
-            user-select: none;
-            -webkit-user-select: none;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-        }
-        .ba-slider img { width: 100%; display: block; pointer-events: none; }
-        .ba-after {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-        .ba-after img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .ba-handle {
-            position: absolute;
-            top: 0; bottom: 0;
-            width: 4px;
-            background: #fff;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            box-shadow: 0 0 15px rgba(0,0,0,0.4);
-        }
-        .ba-handle-knob {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px; height: 44px;
-            background: var(--orange);
-            border: 3px solid #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 900;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.35);
-        }
-
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Estimate Modal */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(13, 13, 15, 0.75);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-        .modal-overlay.open { opacity: 1; pointer-events: all; }
-        .modal {
-            background: #fff;
-            border-radius: 24px;
-            padding: 36px 28px;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-            transform: translateY(20px) scale(0.98);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-        }
-        .modal-overlay.open .modal { transform: translateY(0) scale(1); }
-        .modal input, .modal select, .modal textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e7e3dc;
-            border-radius: 10px;
+        .nav-phone {
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 600;
             font-size: 14px;
-            outline: none;
-            background: #faf8f5;
-            transition: border-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: color var(--transition);
+            white-space: nowrap;
         }
-        .modal input:focus, .modal select:focus, .modal textarea:focus {
-            border-color: var(--orange);
-            background: #fff;
-            box-shadow: 0 0 0 3px rgba(242, 92, 5, 0.1);
+        .nav-phone:hover {
+            color: #fff;
         }
 
-        /* Hamburger & Mobile Menu */
+        /* Hamburger */
         .hamburger {
             display: flex;
             flex-direction: column;
@@ -321,510 +158,1042 @@
             transition: all var(--transition);
             border-radius: 3px;
         }
-        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             inset: 0;
-            background: #0d0d0f;
+            background: #1a1a1c;
             z-index: 999;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 16px;
+            gap: 6px;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.35s ease;
+            transition: opacity 0.4s ease;
         }
-        .mobile-menu.open { opacity: 1; pointer-events: all; }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: all;
+        }
         .mobile-menu a {
             color: #fff;
             font-family: 'Outfit', sans-serif;
             font-size: 26px;
-            font-weight: 700;
+            font-weight: 600;
+            padding: 14px 20px;
+            transition: color var(--transition);
+            opacity: 0;
+            transform: translateY(16px);
             cursor: pointer;
+            text-decoration: none;
+        }
+        .mobile-menu.open a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mobile-menu.open a:nth-child(1) {
+            transition-delay: 0.08s;
+        }
+        .mobile-menu.open a:nth-child(2) {
+            transition-delay: 0.14s;
+        }
+        .mobile-menu.open a:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+        .mobile-menu.open a:nth-child(4) {
+            transition-delay: 0.26s;
+        }
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
+        /* Page System */
+        .page {
+            display: none;
+            animation: fadePageIn 0.5s ease forwards;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadePageIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.02em;
+            border-radius: 12px;
+            transition: all var(--transition);
+            cursor: pointer;
+            white-space: nowrap;
+            border: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(232, 114, 42, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232, 114, 42, 0.4);
+        }
+        .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.45);
+        }
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        .btn-outline-dark {
+            background: transparent;
+            color: #1a1a1c;
+            border: 2px solid #d1cdc7;
+        }
+        .btn-outline-dark:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .btn-lg {
+            padding: 18px 38px;
+            font-size: 16px;
+            border-radius: 14px;
+        }
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 13px;
+            border-radius: 10px;
+        }
+
+        /* Before/After Slider */
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: ew-resize;
+            user-select: none;
+            -webkit-user-select: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        .ba-slider img {
+            width: 100%;
+            display: block;
+            pointer-events: none;
+        }
+        .ba-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .ba-after img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .ba-handle-knob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            pointer-events: none;
+            z-index: 3;
+        }
+        .ba-handle-knob svg {
+            width: 20px;
+            height: 20px;
+            color: #1a1a1c;
+        }
+        .ba-label {
+            position: absolute;
+            bottom: 16px;
+            padding: 6px 16px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+            pointer-events: none;
+            z-index: 4;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+        }
+        .ba-label-before {
+            left: 16px;
+        }
+        .ba-label-after {
+            right: 16px;
+        }
+
+        /* Card Hover */
+        .card-hover {
+            transition: all var(--transition);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Image hover zoom */
+        .img-zoom {
+            overflow: hidden;
+            border-radius: 16px;
+        }
+        .img-zoom img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .img-zoom:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px 28px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            transform: translateY(20px);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .modal-overlay.open .modal {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f3f3f3;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all var(--transition);
+            color: #555;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-close:hover {
+            background: #e0e0e0;
+            color: #1a1a1c;
+        }
+        .modal input,
+        .modal select,
+        .modal textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e8e5e0;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: all var(--transition);
+            background: #fdfbf7;
+            color: #1a1a1c;
+            outline: none;
+        }
+        .modal input:focus,
+        .modal select:focus,
+        .modal textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(232, 114, 42, 0.08);
+            background: #fff;
+        }
+        .modal label {
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #555;
+            display: block;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Pulse animation for CTA */
+        @keyframes pulse-cta {
+            0%,
+            100% {
+                box-shadow: 0 4px 18px rgba(232, 114, 42, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(232, 114, 42, 0.55);
+            }
+        }
+        .pulse-cta {
+            animation: pulse-cta 2.2s infinite;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 13px 24px;
+                font-size: 14px;
+            }
+            .btn-lg {
+                padding: 16px 30px;
+                font-size: 15px;
+            }
+            .ba-handle-knob {
+                width: 36px;
+                height: 36px;
+            }
+            .ba-handle-knob svg {
+                width: 16px;
+                height: 16px;
+            }
+            .modal {
+                padding: 28px 18px;
+                border-radius: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="top-bar">
-        <span>⚡ CALL NOW FOR YOUR FREE ESTIMATE: </span>
-        <a href="tel:+13042411978" class="underline hover:text-black font-extrabold transition-colors">+1 (304) 241-1978</a>
-        <span class="hidden sm:inline"> • FAMILY OPERATED & VETERAN OWNED</span>
-    </div>
-
-    <!-- NAVIGATION -->
+    <!-- ==================== NAVIGATION ==================== -->
     <nav class="nav-bar" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
-            <a href="#home" class="nav-logo">
-                <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-orange-dark rounded-xl flex items-center justify-center p-2 shadow-lg shadow-brand-orange/30 border border-white/20">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M2 20L12 4l10 16H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4v16" stroke-linecap="round"/></svg>
+            <div class="nav-logo" onclick="navigateTo('home')" title="Summit Roofing Co.">
+                <div class="nav-logo-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M2 20L12 4l10 16H2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-                <div>
-                    <div class="font-display font-black text-2xl tracking-tighter text-white uppercase leading-none">ULTIMATE</div>
-                    <div class="font-display font-extrabold text-[11px] tracking-[0.25em] text-brand-orange uppercase">ROOFING</div>
-                </div>
-            </a>
-
-            <div class="hidden lg:flex items-center gap-2">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#locations" class="nav-link">Locations</a>
-                <a href="#owens-corning" class="nav-link">Owens Corning</a>
-                <a href="#projects" class="nav-link">Recent Projects</a>
+                <span class="hidden sm:inline">Summit Roofing</span>
             </div>
-
+            <div class="hidden lg:flex items-center gap-1" id="navLinks">
+                <a class="nav-link active" data-page="home" onclick="navigateTo('home')">Home</a>
+                <a class="nav-link" data-page="services" onclick="navigateTo('services')">Services</a>
+                <a class="nav-link" data-page="projects" onclick="navigateTo('projects')">Projects</a>
+            </div>
             <div class="hidden lg:flex items-center gap-4">
-                <a href="tel:+13042411978" class="text-white font-bold text-sm flex items-center gap-2 hover:text-brand-orange transition-colors">
+                <a href="tel:+15551234567" class="nav-phone">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    (304) 241-1978
+                    (555) 123-4567
                 </a>
-                <button class="btn btn-primary pulse-btn text-xs py-3 px-5 font-extrabold" onclick="openModal()">GET FREE ESTIMATE</button>
+                <button class="btn btn-primary btn-sm pulse-cta" onclick="openModal()">GET A FREE ESTIMATE</button>
             </div>
-
             <button class="hamburger lg:hidden" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- MOBILE MENU -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" onclick="closeMobileMenu()">Home</a>
-        <a href="#services" onclick="closeMobileMenu()">Services</a>
-        <a href="#locations" onclick="closeMobileMenu()">Locations</a>
-        <a href="#owens-corning" onclick="closeMobileMenu()">Owens Corning</a>
-        <a href="#projects" onclick="closeMobileMenu()">Recent Projects</a>
-        <a href="tel:+13042411978" class="text-brand-orange text-lg font-bold mt-4">(304) 241-1978</a>
-        <button class="btn btn-primary btn-lg mt-2" onclick="openModal(); closeMobileMenu();">GET A FREE ESTIMATE</button>
+        <a onclick="navigateTo('home'); closeMobileMenu();">Home</a>
+        <a onclick="navigateTo('services'); closeMobileMenu();">Services</a>
+        <a onclick="navigateTo('projects'); closeMobileMenu();">Projects</a>
+        <a href="tel:+15551234567" style="margin-top:20px;font-size:16px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            (555) 123-4567
+        </a>
+        <button class="btn btn-primary btn-lg" style="margin-top:18px;" onclick="openModal(); closeMobileMenu();">GET A FREE ESTIMATE</button>
     </div>
 
-    <!-- FLOATING OWENS CORNING PINK PANTHER TAB -->
-    <div class="panther-sticky-tab" onclick="openModal()" title="Get Your Instant 60-Second Roof Quote">
-        <span class="panther-tab-label">INSTANT ROOF QUOTE</span>
-        <div class="panther-avatar-box">
-            <!-- Pink Panther Mascot Badge SVG -->
-            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center border-2 border-pink-500 overflow-hidden relative">
-                <svg viewBox="0 0 64 64" class="w-8 h-8">
-                    <circle cx="32" cy="32" r="28" fill="#ea1d5d"/>
-                    <path d="M22 18 L28 26 L20 28 Z" fill="#fff"/>
-                    <path d="M42 18 L36 26 L44 28 Z" fill="#fff"/>
-                    <ellipse cx="32" cy="36" rx="16" ry="14" fill="#ffb6c1"/>
-                    <circle cx="27" cy="34" r="3" fill="#000"/>
-                    <circle cx="37" cy="34" r="3" fill="#000"/>
-                    <polygon points="32,38 29,42 35,42" fill="#ea1d5d"/>
-                    <path d="M28 44 Q32 47 36 44" stroke="#000" stroke-width="2" fill="none"/>
-                </svg>
+    <!-- ==================== PAGE 1: HOME ==================== -->
+    <div class="page active" id="page-home">
+        <!-- Hero -->
+        <section class="relative min-h-screen flex items-center overflow-hidden bg-[#1a1a1c]">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80" alt="Premium residential roofing" class="w-full h-full object-cover opacity-50" loading="eager">
             </div>
-            <span class="text-[9px] font-black text-pink-600 uppercase tracking-tighter">60s QUOTE</span>
-        </div>
-    </div>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="relative min-h-[95vh] flex items-center bg-[#0d0d0f] overflow-hidden pt-32 pb-20">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt="Roofing excellence" class="w-full h-full object-cover opacity-25">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0d0d0f] via-[#0d0d0f]/85 to-transparent z-[1]"></div>
-
-        <div class="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/15 border border-brand-orange/40 text-brand-orange text-xs font-black uppercase tracking-wider mb-6 reveal">
-                    <span>★</span> FAMILY OPERATED — VETERAN OWNED
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black text-white leading-[1.05] mb-6 reveal">
-                    Trusted Roofing Contractor In <span class="text-brand-orange">WV, PA & MD</span>
-                </h1>
-
-                <p class="text-base sm:text-lg text-white/75 font-normal leading-relaxed mb-6 reveal max-w-xl">
-                    Asphalt Shingles • Architectural Shingles • Metal Roofing • Rubber Roofing • Siding • Gutters. Rated in the <strong>Top 1% of Contractors Nationwide</strong>.
-                </p>
-
-                <!-- Owens Corning Platinum Contractor Badge -->
-                <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md mb-8 max-w-lg reveal">
-                    <div class="w-14 h-14 bg-pink-600 rounded-xl flex items-center justify-center p-2 shadow-lg shadow-pink-600/30 flex-shrink-0 text-white font-black text-center text-xs leading-tight uppercase">
-                        OWENS CORNING
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs font-black text-pink-400 tracking-wider uppercase">Official Partner</span>
-                            <span class="w-1.5 h-1.5 bg-pink-500 rounded-full"></span>
-                            <span class="text-xs font-bold text-gray-300">Pink Panther™ Protection</span>
-                        </div>
-                        <div class="text-base font-extrabold text-white tracking-wide uppercase">Platinum Preferred Contractor</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-4 reveal">
-                    <button class="btn btn-primary pulse-btn" onclick="openModal()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        GET INSTANT ROOF ESTIMATE
-                    </button>
-                    <a href="tel:+13042411978" class="btn btn-outline-light">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        (304) 241-1978
-                    </a>
-                </div>
-            </div>
-
-            <!-- Instant 60-Sec Estimate Card -->
-            <div class="lg:col-span-5 reveal">
-                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-brand-orange/30 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gradient-to-l from-brand-orange to-brand-orange-dark text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-bl-xl tracking-wider shadow-md">
-                        ⏱ Under 60 Seconds
-                    </div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <div class="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-                        <span class="text-xs font-bold text-gray-500 uppercase tracking-wide">Instant Online Pricing</span>
-                    </div>
-                    <h3 class="font-display font-extrabold text-2xl text-brand-dark mb-1">Request Free Roof Estimate</h3>
-                    <p class="text-xs text-gray-500 mb-6">See pricing for top-rated roof replacements & repairs in seconds.</p>
-
-                    <form onsubmit="handleSubmit(event)" class="space-y-3.5">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Full Name *</label>
-                            <input type="text" placeholder="John Smith" required>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Phone Number *</label>
-                            <input type="tel" placeholder="(304) 241-1978" required>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Property Address</label>
-                            <input type="text" placeholder="Morgantown, WV / Pittsburgh, PA / Oakland, MD" required>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Select Service</label>
-                            <select>
-                                <option>Architectural Shingles (Owens Corning Duration®)</option>
-                                <option>Standing Seam Metal Roofing</option>
-                                <option>Rubber / Flat Roofing System</option>
-                                <option>Emergency Roof Repair / Storm Damage</option>
-                                <option>Seamless Gutters & Exterior Siding</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full mt-2 font-black tracking-wider text-sm py-4">
-                            GET MY FREE ESTIMATE NOW →
+            <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1c]/90 via-[#1a1a1c]/50 to-[#1a1a1c]/75 z-[1]"></div>
+            <div class="relative z-[2] max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-32 sm:py-40 w-full">
+                <div class="max-w-2xl">
+                    <span class="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.14em] uppercase text-[#e8722a] mb-6 reveal">
+                        <span class="w-10 h-0.5 bg-[#e8722a]"></span> Roofing • Repair • Replacement
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold text-white leading-[1.08] mb-6 reveal" style="transition-delay: 0.1s;">
+                        Protect Your Home With <span class="text-[#e8722a]">Expert Roofing</span> That Lasts
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white/70 leading-relaxed mb-10 max-w-lg reveal" style="transition-delay: 0.2s;">
+                        Family-owned roofing company delivering premium roof repair, replacement, and inspection services. Trusted by over 2,500 homeowners across the region.
+                    </p>
+                    <div class="flex flex-wrap gap-4 reveal" style="transition-delay: 0.3s;">
+                        <button class="btn btn-primary btn-lg pulse-cta" onclick="openModal()">
+                            GET A FREE ESTIMATE
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
-                    </form>
+                        <a href="tel:+15551234567" class="btn btn-outline-light btn-lg">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            CALL NOW
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2] animate-bounce">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" opacity="0.6"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </section>
 
-    <!-- TRUST STATS BAR -->
-    <div class="bg-brand-charcoal border-y border-white/10 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-            <div class="reveal">
-                <div class="text-3xl sm:text-4xl font-black text-brand-orange font-display">TOP 1%</div>
-                <div class="text-xs uppercase tracking-wider text-white/70 font-semibold mt-1">Contractor in North America</div>
+        <!-- Services Preview -->
+        <section class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="text-center mb-14 reveal">
+                    <span class="text-sm font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Our Services</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mt-3 mb-4">Complete Roofing Solutions</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto text-lg">From minor repairs to full replacements, we handle every roofing need with precision and care.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><path d="M2 20L12 4l10 16H2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Roof Repair</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Fast, reliable fixes for leaks, storm damage, and wear. We restore your roof's integrity.</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')" style="transition-delay:0.05s;">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Roof Replacement</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Complete tear-off and installation with premium materials and expert craftsmanship.</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')" style="transition-delay:0.1s;">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Roof Inspection</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Thorough inspections to catch issues early. Detailed reports with honest recommendations.</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')" style="transition-delay:0.15s;">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Gutter Services</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Seamless gutter installation, cleaning, and repair to protect your home's foundation.</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')" style="transition-delay:0.2s;">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5l6.74-6.76z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Siding & Exterior</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Premium siding installation and exterior upgrades to boost curb appeal and efficiency.</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] card-hover reveal cursor-pointer group" onclick="navigateTo('services')" style="transition-delay:0.25s;">
+                        <div class="w-12 h-12 bg-[#e8722a]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e8722a]/20 transition-colors">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8722a" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#1a1a1c] mb-2">Emergency Repairs</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">24/7 emergency response for storm damage, fallen trees, and urgent roofing crises.</p>
+                    </div>
+                </div>
             </div>
-            <div class="reveal" style="transition-delay: 0.1s;">
-                <div class="text-3xl sm:text-4xl font-black text-pink-500 font-display">PLATINUM</div>
-                <div class="text-xs uppercase tracking-wider text-white/70 font-semibold mt-1">Owens Corning Preferred</div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="py-20 sm:py-28 bg-[#fdfbf7]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="text-center mb-14 reveal">
+                    <span class="text-sm font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Why Choose Us</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mt-3 mb-4">Built on Trust & Craftsmanship</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                    <div class="text-center p-6 reveal">
+                        <div class="text-4xl font-display font-extrabold text-[#e8722a] mb-2">15+</div>
+                        <p class="font-semibold text-[#1a1a1c]">Years Experience</p>
+                        <p class="text-sm text-gray-500 mt-1">Serving the community since 2008</p>
+                    </div>
+                    <div class="text-center p-6 reveal" style="transition-delay:0.05s;">
+                        <div class="text-4xl font-display font-extrabold text-[#e8722a] mb-2">2,500+</div>
+                        <p class="font-semibold text-[#1a1a1c]">Happy Homeowners</p>
+                        <p class="text-sm text-gray-500 mt-1">And counting across the region</p>
+                    </div>
+                    <div class="text-center p-6 reveal" style="transition-delay:0.1s;">
+                        <div class="text-4xl font-display font-extrabold text-[#e8722a] mb-2">100%</div>
+                        <p class="font-semibold text-[#1a1a1c]">Satisfaction</p>
+                        <p class="text-sm text-gray-500 mt-1">Guaranteed on every project</p>
+                    </div>
+                    <div class="text-center p-6 reveal" style="transition-delay:0.15s;">
+                        <div class="text-4xl font-display font-extrabold text-[#e8722a] mb-2">A+</div>
+                        <p class="font-semibold text-[#1a1a1c]">BBB Rating</p>
+                        <p class="text-sm text-gray-500 mt-1">Licensed, bonded & insured</p>
+                    </div>
+                    <div class="text-center p-6 reveal" style="transition-delay:0.2s;">
+                        <div class="text-4xl font-display font-extrabold text-[#e8722a] mb-2">24/7</div>
+                        <p class="font-semibold text-[#1a1a1c]">Emergency Service</p>
+                        <p class="text-sm text-gray-500 mt-1">We're here when you need us</p>
+                    </div>
+                </div>
             </div>
-            <div class="reveal" style="transition-delay: 0.2s;">
-                <div class="text-3xl sm:text-4xl font-black text-brand-orange font-display">VETERAN</div>
-                <div class="text-xs uppercase tracking-wider text-white/70 font-semibold mt-1">Owned & Operated</div>
+        </section>
+
+        <!-- Before/After Slider -->
+        <section class="py-20 sm:py-28 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="text-center mb-12 reveal">
+                    <span class="text-sm font-semibold tracking-[0.12em] uppercase text-[#e8722a]">See The Difference</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mt-3 mb-4">Before & After</h2>
+                    <p class="text-gray-500 max-w-lg mx-auto">Drag the handle to see the transformation. This is what quality roofing looks like.</p>
+                </div>
+                <div class="ba-slider reveal" id="baSlider">
+                    <img src="https://images.unsplash.com/photo-1518780664697-55e6b750f14c?w=800&q=80" alt="Before roofing" class="w-full">
+                    <div class="ba-after" id="baAfter">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80" alt="After roofing">
+                    </div>
+                    <div class="ba-handle" id="baHandle">
+                        <div class="ba-handle-knob">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <span class="ba-label ba-label-before">BEFORE</span>
+                    <span class="ba-label ba-label-after">AFTER</span>
+                </div>
             </div>
-            <div class="reveal" style="transition-delay: 0.3s;">
-                <div class="text-3xl sm:text-4xl font-black text-white font-display">50-YEAR</div>
-                <div class="text-xs uppercase tracking-wider text-white/70 font-semibold mt-1">Non-Prorated Warranty</div>
+        </section>
+
+        <!-- Process -->
+        <section class="py-20 sm:py-28 bg-[#1a1a1c] text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="text-center mb-14 reveal">
+                    <span class="text-sm font-semibold tracking-[0.12em] uppercase text-[#e8722a]">How It Works</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mt-3 mb-4">Simple 4-Step Process</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center reveal">
+                        <div class="w-16 h-16 bg-[#e8722a] rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-display font-extrabold">1</div>
+                        <h3 class="font-display font-bold text-xl mb-2">Get in Touch</h3>
+                        <p class="text-white/60 text-sm">Call us or fill out the form for your free, no-obligation estimate.</p>
+                    </div>
+                    <div class="text-center reveal" style="transition-delay:0.08s;">
+                        <div class="w-16 h-16 bg-[#e8722a] rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-display font-extrabold">2</div>
+                        <h3 class="font-display font-bold text-xl mb-2">Free Inspection</h3>
+                        <p class="text-white/60 text-sm">We visit your property, assess the roof, and provide a detailed report.</p>
+                    </div>
+                    <div class="text-center reveal" style="transition-delay:0.16s;">
+                        <div class="w-16 h-16 bg-[#e8722a] rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-display font-extrabold">3</div>
+                        <h3 class="font-display font-bold text-xl mb-2">Expert Work</h3>
+                        <p class="text-white/60 text-sm">Our certified crew delivers top-quality workmanship on schedule.</p>
+                    </div>
+                    <div class="text-center reveal" style="transition-delay:0.24s;">
+                        <div class="w-16 h-16 bg-[#e8722a] rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-display font-extrabold">4</div>
+                        <h3 class="font-display font-bold text-xl mb-2">Enjoy Peace of Mind</h3>
+                        <p class="text-white/60 text-sm">Rest easy with our warranty and ongoing support for years to come.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 sm:py-28 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="text-center mb-12 reveal">
+                    <span class="text-sm font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Testimonials</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mt-3 mb-4">What Homeowners Say</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] reveal">
+                        <div class="flex gap-1 mb-4 text-[#e8722a]">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 italic">"Summit Roofing replaced our entire roof after a major storm. The team was professional, fast, and the results are beautiful. Highly recommend!"</p>
+                        <p class="font-semibold text-[#1a1a1c] text-sm">— Sarah M., Homeowner</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] reveal" style="transition-delay:0.08s;">
+                        <div class="flex gap-1 mb-4 text-[#e8722a]">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 italic">"They came out for a free inspection and found issues we didn't even know about. Honest, fair pricing, and excellent work. Truly a great experience."</p>
+                        <p class="font-semibold text-[#1a1a1c] text-sm">— David R., Homeowner</p>
+                    </div>
+                    <div class="bg-[#fdfbf7] rounded-2xl p-7 border border-[#e8e5e0] reveal" style="transition-delay:0.16s;">
+                        <div class="flex gap-1 mb-4 text-[#e8722a]">★★★★★</div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 italic">"From the estimate to the final cleanup, everything was seamless. The new roof looks incredible and we've already noticed lower energy bills."</p>
+                        <p class="font-semibold text-[#1a1a1c] text-sm">— Jennifer K., Homeowner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-20 sm:py-28 bg-[#fdfbf7]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mb-6 reveal">Ready to Take a Look at Your Roof?</h2>
+                <p class="text-lg text-gray-500 mb-10 reveal" style="transition-delay:0.08s;">Schedule your free inspection today. No pressure, no obligation — just honest advice from roofing experts.</p>
+                <div class="flex flex-wrap justify-center gap-4 reveal" style="transition-delay:0.16s;">
+                    <button class="btn btn-primary btn-lg pulse-cta" onclick="openModal()">GET A FREE ESTIMATE</button>
+                    <a href="tel:+15551234567" class="btn btn-outline-dark btn-lg">CALL (555) 123-4567</a>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- LOCATIONS SERVED -->
-    <section id="locations" class="py-16 bg-[#fbfaf8] border-b border-[#e7e3dc]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-orange">Regional Coverage</span>
-            <h2 class="text-3xl sm:text-4xl font-display font-black text-brand-dark mt-2 mb-3">Proudly Serving WV, PA & MD</h2>
-            <p class="text-gray-500 text-sm max-w-xl mx-auto mb-6">Our dedicated crews provide rapid dispatch across the entire tri-state area.</p>
-
-            <div class="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto">
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Morgantown, WV</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Wheeling, WV</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Clarksburg, WV</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Bridgeport, WV</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Parkersburg, WV</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Pittsburgh, PA</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Greensburg, PA</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Uniontown, PA</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Oakland, MD</span>
-                <span class="px-4 py-2 bg-white border border-[#e7e3dc] rounded-full text-xs font-bold text-gray-800 shadow-sm">📍 Cumberland, MD</span>
+    <!-- ==================== PAGE 2: SERVICES ==================== -->
+    <div class="page" id="page-services">
+        <!-- Hero -->
+        <section class="relative py-32 sm:py-40 overflow-hidden bg-[#1a1a1c]">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80" alt="Roofing services" class="w-full h-full object-cover opacity-40" loading="lazy">
             </div>
-        </div>
-    </section>
-
-    <!-- OWENS CORNING PINK PANTHER FEATURE SECTION -->
-    <section id="owens-corning" class="py-20 bg-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-6 reveal">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pink-100 text-pink-600 text-xs font-black uppercase tracking-wider mb-4">
-                    Official Platinum Partner
-                </div>
-                <h2 class="text-3xl sm:text-5xl font-display font-black text-brand-dark mb-6 leading-tight">
-                    Backed by the Power of <span class="text-pink-600">Owens Corning & Pink Panther™</span>
-                </h2>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                    Because Ultimate Roofing is an <strong>Owens Corning Platinum Preferred Contractor</strong>, we offer exclusive warranties that other contractors cannot touch — including up to 50 years of non-prorated labor and material protection.
-                </p>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
-                        <p class="text-sm text-gray-700"><strong>SureNail® Technology:</strong> Patented fabric reinforcement strip providing unmatched triple-layer grip and up to 130 MPH wind warranty.</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
-                        <p class="text-sm text-gray-700"><strong>StreakGuard™ Algae Protection:</strong> Specialized copper-lined granules preventing dark streaks and algae for long-lasting curb appeal.</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
-                        <p class="text-sm text-gray-700"><strong>Total Protection Roofing System®:</strong> Integrated seal, defend, and breathe ventilation engineering.</p>
-                    </div>
-                </div>
-                <button class="btn btn-primary" onclick="openModal()">CLAIM YOUR 50-YEAR WARRANTY</button>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1c]/85 to-[#1a1a1c]/70 z-[1]"></div>
+            <div class="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+                <span class="text-sm font-semibold tracking-[0.14em] uppercase text-[#e8722a] reveal">Our Expertise</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white mt-4 mb-6 reveal">Roofing Services Built Around Your Home</h1>
+                <p class="text-lg text-white/65 max-w-2xl mx-auto reveal">Every service is delivered with precision, premium materials, and a commitment to your satisfaction.</p>
             </div>
+        </section>
 
-            <div class="lg:col-span-6 reveal" style="transition-delay: 0.15s;">
-                <div class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 sm:p-10 rounded-3xl border-2 border-pink-200 shadow-xl relative text-center">
-                    <div class="w-24 h-24 bg-pink-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-pink-500/30 font-black text-2xl">
-                        OC
+        <!-- Service Details -->
+        <section class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-20 reveal">
+                    <div class="img-zoom rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=700&q=80" alt="Roof Repair" class="w-full h-80 object-cover rounded-2xl">
                     </div>
-                    <h3 class="font-display font-black text-2xl text-brand-dark mb-2">Owens Corning Total Protection</h3>
-                    <p class="text-sm text-gray-600 max-w-md mx-auto mb-6">Experience the peace of mind that comes with America's #1 roofing and insulation brand, installed by certified masters.</p>
-                    <div class="grid grid-cols-2 gap-4 text-left">
-                        <div class="bg-white p-4 rounded-xl border border-pink-100 shadow-sm">
-                            <div class="font-extrabold text-pink-600 text-lg">130 MPH</div>
-                            <div class="text-xs text-gray-500">Wind Resistance Rating</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-pink-100 shadow-sm">
-                            <div class="font-extrabold text-brand-orange text-lg">Top 1%</div>
-                            <div class="text-xs text-gray-500">Certified Platinum Status</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-20 bg-[#fdfbf7]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="text-center mb-14 reveal">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Full Exterior Solutions</span>
-                <h2 class="text-3xl sm:text-5xl font-display font-black text-brand-dark mt-2 mb-4">Precision Roofing Services</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">From complete replacements to high-grade commercial coatings, our team executes with military precision.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#e7e3dc] shadow-sm hover:shadow-xl transition-all reveal group">
-                    <div class="w-14 h-14 bg-brand-orange/15 group-hover:bg-brand-orange rounded-2xl flex items-center justify-center text-brand-orange group-hover:text-white mb-6 font-display font-black text-xl transition-colors">
-                        01
-                    </div>
-                    <h3 class="text-2xl font-display font-black text-brand-dark mb-3">Architectural Shingles</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Complete tear-off and installation of high-definition Owens Corning Duration® shingles engineered for maximum storm resilience.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-8 border-t pt-4">
-                        <li>✓ 50-Year Non-Prorated Warranty</li>
-                        <li>✓ SureNail® Extreme Grip</li>
-                        <li>✓ Class A Fire Rating</li>
-                    </ul>
-                    <button class="btn btn-primary w-full text-xs py-3" onclick="openModal()">Get Instant Estimate</button>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#e7e3dc] shadow-sm hover:shadow-xl transition-all reveal group" style="transition-delay: 0.1s;">
-                    <div class="w-14 h-14 bg-brand-orange/15 group-hover:bg-brand-orange rounded-2xl flex items-center justify-center text-brand-orange group-hover:text-white mb-6 font-display font-black text-xl transition-colors">
-                        02
-                    </div>
-                    <h3 class="text-2xl font-display font-black text-brand-dark mb-3">Metal & Rubber Systems</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Heavy-gauge standing seam metal roofs and commercial EPDM/TPO flat rubber systems designed for extreme life cycles.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-8 border-t pt-4">
-                        <li>✓ Standing Seam & Corrugated</li>
-                        <li>✓ Flat Roof Leak Proofing</li>
-                        <li>✓ Zero Maintenance Finish</li>
-                    </ul>
-                    <button class="btn btn-primary w-full text-xs py-3" onclick="openModal()">Get Instant Estimate</button>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#e7e3dc] shadow-sm hover:shadow-xl transition-all reveal group" style="transition-delay: 0.2s;">
-                    <div class="w-14 h-14 bg-brand-orange/15 group-hover:bg-brand-orange rounded-2xl flex items-center justify-center text-brand-orange group-hover:text-white mb-6 font-display font-black text-xl transition-colors">
-                        03
-                    </div>
-                    <h3 class="text-2xl font-display font-black text-brand-dark mb-3">Siding, Gutters & Repairs</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Seamless 5" and 6" gutter systems with leaf protection, insulated vinyl and composite siding, and 24/7 storm damage repair.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-8 border-t pt-4">
-                        <li>✓ 24/7 Emergency Tarping</li>
-                        <li>✓ Seamless Heavy-Gauge Gutters</li>
-                        <li>✓ Insurance Claim Experts</li>
-                    </ul>
-                    <button class="btn btn-primary w-full text-xs py-3" onclick="openModal()">Get Instant Estimate</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BEFORE / AFTER SLIDER -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="text-center mb-12 reveal">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-orange">Work We're Proud Of</span>
-                <h2 class="text-3xl sm:text-5xl font-display font-black text-brand-dark mt-2 mb-4">Before & After Transformations</h2>
-                <p class="text-gray-500 max-w-lg mx-auto text-sm">Drag the slider to see how Ultimate Roofing transforms aging, damaged roofs into durable masterpieces.</p>
-            </div>
-
-            <div class="ba-slider reveal" id="baSlider">
-                <img src="https://images.unsplash.com/photo-1518780664697-55e6b750f14c?w=900&q=80" alt="Roof before restoration">
-                <div class="ba-after" id="baAfter">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=900&q=80" alt="Roof after replacement">
-                </div>
-                <div class="ba-handle" id="baHandle">
-                    <div class="ba-handle-knob">⇄</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-[#0d0d0f] text-white py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div class="md:col-span-2">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center font-display font-black text-white">UR</div>
                     <div>
-                        <div class="font-display font-black text-2xl uppercase leading-none tracking-tight">ULTIMATE ROOFING</div>
-                        <div class="text-[10px] text-brand-orange font-bold uppercase tracking-widest">WV • PA • MD</div>
+                        <span class="text-xs font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Service 01</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#1a1a1c] mt-2 mb-4">Roof Repair</h2>
+                        <p class="text-gray-500 leading-relaxed mb-4">Leaks, missing shingles, storm damage — we handle it all. Our repair team responds quickly to prevent further damage and restore your roof's protection. We use only top-grade materials matched to your existing roof for a seamless finish.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Leak detection & patching</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Shingle & tile replacement</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Storm & hail damage repair</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openModal()">GET A FREE ESTIMATE</button>
                     </div>
                 </div>
-                <p class="text-white/60 text-sm max-w-md mb-6">
-                    Top 1% Owens Corning Platinum Preferred Roofing Contractor. Family-operated, veteran-owned, serving homeowners and businesses across West Virginia, Pennsylvania, and Maryland.
-                </p>
-                <div class="text-xs text-white/40 space-y-1">
-                    <p>📍 Headquarters: 2300 Smithtown Road, Morgantown, WV 26508</p>
-                    <p>📞 Phone: (304) 241-1978</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-20 reveal" style="transition-delay:0.1s;">
+                    <div class="order-2 lg:order-1">
+                        <span class="text-xs font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Service 02</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#1a1a1c] mt-2 mb-4">Roof Replacement</h2>
+                        <p class="text-gray-500 leading-relaxed mb-4">When repairs aren't enough, our full replacement service gives your home a fresh start. We offer asphalt shingles, metal roofing, tile, and more. Every replacement includes a comprehensive warranty you can count on.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Complete tear-off & installation</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Premium material options</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> 10-25 year warranties</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openModal()">GET A FREE ESTIMATE</button>
+                    </div>
+                    <div class="img-zoom rounded-2xl order-1 lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&q=80" alt="Roof Replacement" class="w-full h-80 object-cover rounded-2xl">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-20 reveal" style="transition-delay:0.2s;">
+                    <div class="img-zoom rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=700&q=80" alt="Roof Inspection" class="w-full h-80 object-cover rounded-2xl">
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Service 03</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#1a1a1c] mt-2 mb-4">Roof Inspection</h2>
+                        <p class="text-gray-500 leading-relaxed mb-4">Our certified inspectors examine every inch of your roof — shingles, flashing, vents, gutters, and underlayment. You'll receive a detailed report with photos and clear recommendations, so you can make informed decisions.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Comprehensive 30-point inspection</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Detailed written report</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Honest, no-pressure advice</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openModal()">SCHEDULE INSPECTION</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal" style="transition-delay:0.3s;">
+                    <div class="order-2 lg:order-1">
+                        <span class="text-xs font-semibold tracking-[0.12em] uppercase text-[#e8722a]">Service 04</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#1a1a1c] mt-2 mb-4">Gutter & Siding</h2>
+                        <p class="text-gray-500 leading-relaxed mb-4">Protect your entire exterior with our gutter and siding services. From seamless gutter installation to premium siding replacement, we ensure your home stays dry, efficient, and beautiful year-round.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Seamless gutter installation</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Vinyl, fiber cement & wood siding</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#e8722a] rounded-full flex-shrink-0"></span> Exterior painting & finishing</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openModal()">GET A FREE ESTIMATE</button>
+                    </div>
+                    <div class="img-zoom rounded-2xl order-1 lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Gutter and Siding" class="w-full h-80 object-cover rounded-2xl">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div>
-                <h4 class="font-bold text-sm uppercase tracking-wider mb-4 text-brand-orange">Quick Navigation</h4>
-                <ul class="space-y-2 text-sm text-white/60">
-                    <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">Roofing & Exterior</a></li>
-                    <li><a href="#owens-corning" class="hover:text-white transition-colors">Owens Corning Warranty</a></li>
-                    <li><a href="#locations" class="hover:text-white transition-colors">Service Regions</a></li>
-                    <li><a href="javascript:void(0)" onclick="openModal()" class="hover:text-white transition-colors">Free Estimate</a></li>
-                </ul>
+        <!-- Services CTA -->
+        <section class="py-20 sm:py-28 bg-[#1a1a1c] text-white text-center">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10">
+                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 reveal">Not Sure What You Need?</h2>
+                <p class="text-white/65 text-lg mb-10 reveal">Let our experts assess your roof and recommend the perfect solution — completely free.</p>
+                <button class="btn btn-primary btn-lg pulse-cta reveal" onclick="openModal()">GET A FREE ESTIMATE</button>
             </div>
+        </section>
+    </div>
 
-            <div>
-                <h4 class="font-bold text-sm uppercase tracking-wider mb-4 text-brand-orange">Direct Contact</h4>
-                <p class="text-xs text-white/60 uppercase mb-1">Call for 24/7 Service</p>
-                <a href="tel:+13042411978" class="text-xl text-brand-orange font-black hover:underline block mb-4">+1 (304) 241-1978</a>
-                <p class="text-xs text-white/40">Always open for emergency repairs, storm damage inspections, and quotes.</p>
+    <!-- ==================== PAGE 3: PROJECTS ==================== -->
+    <div class="page" id="page-projects">
+        <!-- Hero -->
+        <section class="relative py-32 sm:py-40 overflow-hidden bg-[#1a1a1c]">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80" alt="Our projects" class="w-full h-full object-cover opacity-35" loading="lazy">
             </div>
-        </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1c]/90 to-[#1a1a1c]/65 z-[1]"></div>
+            <div class="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+                <span class="text-sm font-semibold tracking-[0.14em] uppercase text-[#e8722a] reveal">Our Portfolio</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white mt-4 mb-6 reveal">Work We're Proud Of</h1>
+                <p class="text-lg text-white/65 max-w-2xl mx-auto reveal">Browse our recent projects — each one a testament to quality craftsmanship and attention to detail.</p>
+            </div>
+        </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mt-12 pt-6 border-t border-white/10 text-xs text-white/40 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© 2026 Ultimate Roofing LLC. All Rights Reserved.</p>
-            <p>Owens Corning Platinum Preferred Contractor • Veteran Owned</p>
+        <!-- Project Gallery -->
+        <section class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group cursor-pointer reveal">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80" alt="Full roof replacement project" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Full Replacement</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Modern Asphalt Shingle Roof</h3>
+                        <p class="text-sm text-gray-500 mt-1">Complete tear-off and premium installation in under 4 days.</p>
+                    </div>
+                    <div class="group cursor-pointer reveal" style="transition-delay:0.08s;">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" alt="Storm damage repair" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Storm Repair</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Hail Damage Restoration</h3>
+                        <p class="text-sm text-gray-500 mt-1">Emergency response with insurance claim assistance.</p>
+                    </div>
+                    <div class="group cursor-pointer reveal" style="transition-delay:0.16s;">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Luxury home roofing" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Luxury Home</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Custom Tile Roofing</h3>
+                        <p class="text-sm text-gray-500 mt-1">Handcrafted tile installation for a stunning estate home.</p>
+                    </div>
+                    <div class="group cursor-pointer reveal" style="transition-delay:0.24s;">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Gutter installation" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Gutter System</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Seamless Gutter Upgrade</h3>
+                        <p class="text-sm text-gray-500 mt-1">Complete gutter replacement with leaf guard system.</p>
+                    </div>
+                    <div class="group cursor-pointer reveal" style="transition-delay:0.32s;">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1518780664697-55e6b750f14c?w=600&q=80" alt="Before repair project" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Before & After</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Complete Roof Restoration</h3>
+                        <p class="text-sm text-gray-500 mt-1">From worn-out to like-new in just 3 days.</p>
+                    </div>
+                    <div class="group cursor-pointer reveal" style="transition-delay:0.4s;">
+                        <div class="img-zoom rounded-2xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Siding and exterior" class="w-full h-64 object-cover rounded-2xl">
+                        </div>
+                        <span class="text-xs font-semibold tracking-[0.1em] uppercase text-[#e8722a]">Exterior</span>
+                        <h3 class="font-display font-bold text-lg text-[#1a1a1c] mt-1">Siding & Roof Combo</h3>
+                        <p class="text-sm text-gray-500 mt-1">Coordinated exterior makeover with new roof and siding.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects CTA -->
+        <section class="py-20 sm:py-28 bg-[#fdfbf7] text-center">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1a1a1c] mb-4 reveal">See a Similar Problem?</h2>
+                <p class="text-lg text-gray-500 mb-10 reveal">If your roof looks like any of our "before" photos, it's time to act. Let us give you a free, honest assessment.</p>
+                <button class="btn btn-primary btn-lg pulse-cta reveal" onclick="openModal()">GET A FREE ESTIMATE</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#1a1a1c] text-white py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-[#e8722a] rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="18" height="18"><path d="M2 20L12 4l10 16H2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="font-display font-bold text-lg">Summit Roofing</span>
+                    </div>
+                    <p class="text-white/50 text-sm leading-relaxed">Premium roofing services for homeowners who expect the best. Licensed, bonded, and insured.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-semibold text-sm uppercase tracking-[0.08em] mb-4 text-white/70">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-white/50">
+                        <li><a class="hover:text-white transition-colors cursor-pointer" onclick="navigateTo('home')">Home</a></li>
+                        <li><a class="hover:text-white transition-colors cursor-pointer" onclick="navigateTo('services')">Services</a></li>
+                        <li><a class="hover:text-white transition-colors cursor-pointer" onclick="navigateTo('projects')">Projects</a></li>
+                        <li><a class="hover:text-white transition-colors cursor-pointer" onclick="openModal()">Free Estimate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-semibold text-sm uppercase tracking-[0.08em] mb-4 text-white/70">Services</h4>
+                    <ul class="space-y-2 text-sm text-white/50">
+                        <li>Roof Repair</li>
+                        <li>Roof Replacement</li>
+                        <li>Roof Inspection</li>
+                        <li>Gutter Services</li>
+                        <li>Siding & Exterior</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-semibold text-sm uppercase tracking-[0.08em] mb-4 text-white/70">Contact</h4>
+                    <ul class="space-y-2 text-sm text-white/50">
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg> (555) 123-4567</li>
+                        <li>123 Main Street, Suite 100</li>
+                        <li>Anytown, ST 12345</li>
+                        <li>info@summitroofing.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/40">
+                <p>&copy; 2024 Summit Roofing Co. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <span class="hover:text-white/70 transition-colors cursor-pointer">Privacy Policy</span>
+                    <span class="hover:text-white/70 transition-colors cursor-pointer">Terms of Service</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- ESTIMATE MODAL -->
+    <!-- ==================== ESTIMATE MODAL ==================== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-black font-bold text-lg" onclick="closeModal()">✕</button>
-            <div class="flex items-center gap-2 mb-1">
-                <span class="px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-600 text-[10px] font-black uppercase">Owens Corning Certified</span>
-            </div>
-            <h3 class="font-display font-black text-2xl text-brand-dark mb-1">Get Your Free Roof Estimate</h3>
-            <p class="text-xs text-gray-500 mb-5">Fill in your information below and an estimate specialist will contact you immediately.</p>
-            <form onsubmit="handleSubmit(event)" class="space-y-3">
-                <div>
-                    <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Full Name *</label>
-                    <input type="text" placeholder="John Smith" required>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+            <h3 class="font-display font-bold text-2xl text-[#1a1a1c] mb-2">Get Your Free Estimate</h3>
+            <p class="text-gray-500 text-sm mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
+            <form id="estimateForm" onsubmit="handleSubmit(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" placeholder="John Smith" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@email.com">
+                    </div>
+                    <div>
+                        <label for="service">Service Needed</label>
+                        <select id="service">
+                            <option value="">Select a service...</option>
+                            <option value="repair">Roof Repair</option>
+                            <option value="replacement">Roof Replacement</option>
+                            <option value="inspection">Roof Inspection</option>
+                            <option value="gutter">Gutter Services</option>
+                            <option value="siding">Siding & Exterior</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message">Brief Description</label>
+                        <textarea id="message" rows="3" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full btn-lg">SUBMIT & GET MY FREE ESTIMATE</button>
+                    <p class="text-xs text-gray-400 text-center mt-3">No spam, no obligations. We respect your privacy.</p>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Phone Number *</label>
-                    <input type="tel" placeholder="(304) 241-1978" required>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Service Area</label>
-                    <select>
-                        <option>Morgantown / Bridgeport / Clarksburg, WV</option>
-                        <option>Wheeling / Parkersburg, WV</option>
-                        <option>Pittsburgh / Uniontown / Greensburg, PA</option>
-                        <option>Oakland / Cumberland, MD</option>
-                        <option>Other / Not Listed</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Tell Us About Your Roof</label>
-                    <textarea rows="2" placeholder="Leaking, old shingles, storm damage, full replacement..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-full mt-3 font-extrabold text-sm py-3.5">SUBMIT ESTIMATE REQUEST</button>
             </form>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- ==================== SCRIPTS ==================== -->
     <script>
+        // Navigation scroll effect
         const navbar = document.getElementById('navbar');
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const modalOverlay = document.getElementById('modalOverlay');
+        let isMenuOpen = false;
+        let isModalOpen = false;
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
+        // Hamburger toggle
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.classList.toggle('menu-open');
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                hamburger.classList.add('open');
+                mobileMenu.classList.add('open');
+                document.body.classList.add('menu-open');
+            } else {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
         });
 
         function closeMobileMenu() {
+            isMenuOpen = false;
             hamburger.classList.remove('open');
             mobileMenu.classList.remove('open');
             document.body.classList.remove('menu-open');
         }
 
+        // Page Navigation
+        function navigateTo(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Show target page
+            const targetPage = document.getElementById('page-' + pageName);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                // Re-trigger animation
+                targetPage.style.animation = 'none';
+                targetPage.offsetHeight;
+                targetPage.style.animation = 'fadePageIn 0.5s ease forwards';
+            }
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageName) {
+                    link.classList.add('active');
+                }
+            });
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Close mobile menu
+            closeMobileMenu();
+            // Re-observe reveal elements
+            setTimeout(observeReveal, 300);
+        }
+
+        // Modal
         function openModal() {
+            isModalOpen = true;
             modalOverlay.classList.add('open');
             document.body.classList.add('modal-open');
         }
 
         function closeModal() {
+            isModalOpen = false;
             modalOverlay.classList.remove('open');
             document.body.classList.remove('modal-open');
         }
 
         modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isModalOpen) {
+                closeModal();
+            }
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMobileMenu();
+            }
         });
 
         function handleSubmit(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
             btn.textContent = '✓ ESTIMATE REQUEST SENT!';
             btn.style.background = '#22c55e';
+            btn.style.pointerEvents = 'none';
             setTimeout(() => {
-                btn.textContent = 'SUBMIT ESTIMATE REQUEST';
+                btn.textContent = originalText;
                 btn.style.background = '';
+                btn.style.pointerEvents = '';
                 closeModal();
-            }, 2200);
+                document.getElementById('estimateForm').reset();
+            }, 2500);
         }
 
-        // Before / After Slider Logic
+        // Before/After Slider
         const baSlider = document.getElementById('baSlider');
         const baAfter = document.getElementById('baAfter');
         const baHandle = document.getElementById('baHandle');
@@ -841,27 +1210,73 @@
         }
 
         if (baSlider) {
-            baSlider.addEventListener('mousedown', () => isDragging = true);
-            baSlider.addEventListener('touchstart', () => isDragging = true, { passive: true });
-            window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
-            window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); }, { passive: true });
-            window.addEventListener('mouseup', () => isDragging = false);
-            window.addEventListener('touchend', () => isDragging = false);
+            baSlider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                baSlider.style.cursor = 'ew-resize';
+                updateSlider(e.clientX);
+            });
+            baSlider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                baSlider.style.cursor = 'ew-resize';
+                updateSlider(e.touches[0].clientX);
+            }, { passive: false });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    updateSlider(e.touches[0].clientX);
+                }
+            }, { passive: false });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                if (baSlider) baSlider.style.cursor = 'ew-resize';
+            });
+            window.addEventListener('touchend', () => {
+                isDragging = false;
+                if (baSlider) baSlider.style.cursor = 'ew-resize';
+            });
+
+            // Initialize at 50%
             updateSlider(baSlider.getBoundingClientRect().left + baSlider.getBoundingClientRect().width / 2);
         }
 
-        // Intersection Observer for Reveal animations
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
+        // Scroll Reveal Observer
+        function observeReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-        reveals.forEach(el => observer.observe(el));
+            reveals.forEach(el => {
+                // Reset for re-observation
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+        }
+
+        // Initial observation
+        observeReveal();
+
+        // Re-observe on page navigation
+        const origNavigateTo = navigateTo;
+        navigateTo = function(pageName) {
+            origNavigateTo(pageName);
+            setTimeout(observeReveal, 400);
+        };
+
+        // Initial scroll check
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        }
     </script>
 </body>
 </html>
